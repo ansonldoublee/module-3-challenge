@@ -30,7 +30,7 @@ const displayAverageSalary = function(employeesArray) {
   const totalSalary = employeesArray.reduce((sum, employee) => sum + employee.salary, 0);
   const averageSalary = totalSalary / employeesArray.length;
   
-  console.log(`The average employee salary is ${averageSalary.toLocaleString("en-AU", {
+  console.log(`The average employee salary of ${employeesArray.length} employee(s) is ${averageSalary.toLocaleString("en-AU", {
     style: "currency",
     currency: "AUD"
   })}`);
@@ -40,6 +40,10 @@ const displayAverageSalary = function(employeesArray) {
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
+    const randomIndex = Math.floor(Math.random() * employeesArray.length);
+    const randomEmployee = employeesArray[randomIndex];
+    
+    console.log(`Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`);
 }
 
 /*
